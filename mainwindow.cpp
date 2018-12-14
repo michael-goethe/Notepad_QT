@@ -8,6 +8,7 @@
 #include <QHoverEvent>
 #include <QEvent>
 #include <QMessageBox>
+#include <dialog.h>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -174,3 +175,17 @@ void MainWindow::upperletter()
         MainWindow::cursorend();
     }
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    Dialog *wnd = new Dialog;
+    wnd->show();
+        connect(wnd, SIGNAL(textsent(QString)), this, SLOT(gettext(QString)));
+}
+
+void MainWindow::gettext(const QString &text){
+    qDebug() << "fskda";
+}
+
+
+

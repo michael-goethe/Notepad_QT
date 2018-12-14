@@ -24,6 +24,8 @@ private slots:
     bool event(QEvent * e);
     void list();
     void fontchange(QString event);
+    void gettext(const QString & text);
+    void on_pushButton_clicked();
 
 private:
     void cursorend();
